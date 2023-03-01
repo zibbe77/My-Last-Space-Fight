@@ -171,11 +171,6 @@ public class GlobalSelection : MonoBehaviour
 
         Mesh selectionMesh = new Mesh();
 
-        for (int i = 0; i < verts.Length; i++)
-        {
-            print(verts[i]);
-        }
-
         selectionMesh.vertices = verts;
         selectionMesh.triangles = tris;
 
