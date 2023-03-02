@@ -30,6 +30,9 @@ public class NewCamraControler : MonoBehaviour
     [SerializeField] private float maxRotationX = 45f;
     [SerializeField] private float minRotationX = 330f;
 
+    [SerializeField] private float rotateDelay = 1f;
+    private float rotateDelayIn;
+
     //Edge movment
     [SerializeField] private float edgeTolerance = 0.05f;
     [SerializeField] private bool useScreenEdge = false;
@@ -58,6 +61,9 @@ public class NewCamraControler : MonoBehaviour
         cameraTransform = this.GetComponentInChildren<Camera>().transform;
 
         targetPosition = transform.position;
+
+        //backgrond work to set a timer for starting to rotate 
+        rotateDelayIn = rotateDelay;
     }
     private void OnEnable()
     {
@@ -229,24 +235,28 @@ public class NewCamraControler : MonoBehaviour
     #region Rotate
     private void RotateCamera(InputAction.CallbackContext inputvalue)
     {
-        if (!Mouse.current.rightButton.isPressed) { return; }
+        if (!Mouse.current.rightButton.isPressed) { rotateDelayIn = rotateDelay; return; }
+        rotateDelayIn -= Time.deltaTime;
 
-        float valueX = inputvalue.ReadValue<Vector2>().x;
-        float valueY = -inputvalue.ReadValue<Vector2>().y;
-
-        Quaternion rotateAmount = Quaternion.Euler(valueY * maxRotationSpeed + transform.rotation.eulerAngles.x, valueX * maxRotationSpeed + transform.rotation.eulerAngles.y, 0f);
-
-        // Limits the rotasion 
-        if (rotateAmount.eulerAngles.x < minRotationX && rotateAmount.eulerAngles.x > minRotationX - 25)
+        if (rotateDelayIn < 0)
         {
-            rotateAmount.eulerAngles = new Vector3(minRotationX, rotateAmount.eulerAngles.y, rotateAmount.eulerAngles.z);
-        }
-        else if (rotateAmount.eulerAngles.x > maxRotationX && rotateAmount.eulerAngles.x < (maxRotationX + 25))
-        {
-            rotateAmount.eulerAngles = new Vector3(maxRotationX, rotateAmount.eulerAngles.y, rotateAmount.eulerAngles.z);
-        }
+            float valueX = inputvalue.ReadValue<Vector2>().x;
+            float valueY = -inputvalue.ReadValue<Vector2>().y;
 
-        transform.rotation = rotateAmount;
+            Quaternion rotateAmount = Quaternion.Euler(valueY * maxRotationSpeed + transform.rotation.eulerAngles.x, valueX * maxRotationSpeed + transform.rotation.eulerAngles.y, 0f);
+
+            // Limits the rotasion 
+            if (rotateAmount.eulerAngles.x < minRotationX && rotateAmount.eulerAngles.x > minRotationX - 25)
+            {
+                rotateAmount.eulerAngles = new Vector3(minRotationX, rotateAmount.eulerAngles.y, rotateAmount.eulerAngles.z);
+            }
+            else if (rotateAmount.eulerAngles.x > maxRotationX && rotateAmount.eulerAngles.x < (maxRotationX + 25))
+            {
+                rotateAmount.eulerAngles = new Vector3(maxRotationX, rotateAmount.eulerAngles.y, rotateAmount.eulerAngles.z);
+            }
+
+            transform.rotation = rotateAmount;
+        }
     }
     #endregion
 

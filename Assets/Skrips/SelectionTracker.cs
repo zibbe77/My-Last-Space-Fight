@@ -6,16 +6,21 @@ public class SelectionTracker : MonoBehaviour
 {
     //hold all the selected Objects 
     public Dictionary<int, GameObject> selectedTable = new Dictionary<int, GameObject>();
-
-    public void SelectedThing(GameObject thing)
+    public void SelectedThing(GameObject thing, bool shift)
     {
-        int id = thing.GetInstanceID();
-        if (!(selectedTable.ContainsKey(id)))
+        if (!(thing.layer == 8))
         {
-            selectedTable.Add(id, thing);
-            thing.AddComponent<OnSelection>();
+            int id = thing.GetInstanceID();
+            if (!(selectedTable.ContainsKey(id)))
+            {
+                selectedTable.Add(id, thing);
+                thing.AddComponent<OnSelection>();
+            }
+            else if (shift == true)
+            {
+                DeSelectedThing(id);
+            }
         }
-
     }
     public void DeSelectedThing(int id)
     {

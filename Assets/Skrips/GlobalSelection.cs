@@ -70,12 +70,12 @@ public class GlobalSelection : MonoBehaviour
                     //if hit
                     if (Keyboard.current.shiftKey.IsPressed())
                     {
-                        selectionTracker.SelectedThing(hit.transform.gameObject);
+                        selectionTracker.SelectedThing(hit.transform.gameObject, true);
                     }
                     else
                     {
                         selectionTracker.DeSelectedAllThings();
-                        selectionTracker.SelectedThing(hit.transform.gameObject);
+                        selectionTracker.SelectedThing(hit.transform.gameObject, false);
                     }
                 }
                 else
@@ -92,6 +92,7 @@ public class GlobalSelection : MonoBehaviour
             }
             else
             {
+                //This creats the select box
                 verts = new Vector3[4];
                 vecs = new Vector3[4];
 
@@ -133,6 +134,8 @@ public class GlobalSelection : MonoBehaviour
     }
     #endregion
 
+    //creats the select box 
+    #region Creat Select box
     //create a bounding box (4 corners in order) from the start and end mouse position
     Vector2[] getBoundingBox(Vector2 p1, Vector2 p2)
     {
@@ -179,8 +182,9 @@ public class GlobalSelection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        selectionTracker.SelectedThing(other.gameObject);
+        selectionTracker.SelectedThing(other.gameObject, false);
     }
+    #endregion
 
     //Interfases the Utils skrip to draw the selecson box
     #region GUI 
