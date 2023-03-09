@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ShipMove : MonoBehaviour
 {
     Vector3 targetPositionG;
-    Vector3 CurentPosition;
     Vector3 Position;
     Transform transform;
+
+    NavMeshAgent agent;
+
     [SerializeField] private float Speed = 5f;
 
     bool Test = false;
@@ -17,6 +20,8 @@ public class ShipMove : MonoBehaviour
     void Start()
     {
         transform = this.GetComponent<Transform>();
+        agent = this.GetComponent<NavMeshAgent>();
+        targetPositionG = transform.position;
     }
 
     // Update is called once per frame
@@ -27,35 +32,11 @@ public class ShipMove : MonoBehaviour
 
     public void MoveShip(Vector3 targetPosition)
     {
-        targetPosition = targetPositionG;
-        Test = false;
+        targetPositionG = targetPosition;
     }
 
     public void MoveShipStatic()
     {
-        if (Test)
-        {
-            CurentPosition = transform.position;
-
-            if (CurentPosition.x > targetPositionG.x)
-            {
-                Position += new Vector3(Speed, 0, 0);
-            }
-            else if (CurentPosition.x < targetPositionG.x)
-            {
-                Position += new Vector3(-Speed, 0, 0);
-            }
-
-            if (CurentPosition.z > targetPositionG.z)
-            {
-                Position += new Vector3(0, 0, Speed);
-            }
-            else if (CurentPosition.z < targetPositionG.z)
-            {
-                Position += new Vector3(0, 0, -Speed);
-            }
-
-            transform.position += Position;
-        }
+        agent.SetDestination(targetPositionG);
     }
 }

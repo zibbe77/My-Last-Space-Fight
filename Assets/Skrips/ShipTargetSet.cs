@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class ShipTargetSet : MonoBehaviour
 {
     SelectionTracker selectionTracker;
+
     private void Start()
     {
         selectionTracker = Camera.main.GetComponent<SelectionTracker>();

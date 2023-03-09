@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 527332926389234672}
   - component: {fileID: 3307981300926135364}
   - component: {fileID: 2770849770843357755}
+  - component: {fileID: 1104756416592140043}
   m_Layer: 6
-  m_Name: CubeTestship
+  m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5b989e46d4d384289fe07dc7608bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 5
 --- !u!114 &2770849770843357755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,3 +125,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84697bfebf7ef2e469a49717ca727996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &1104756416592140043
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527332926389234673}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
