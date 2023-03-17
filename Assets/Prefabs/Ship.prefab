@@ -160,3 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb836d481ba6e6c4badf684c41bb4bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hp: 100
+  shields: 150
+  dmg: 10
+  Minerals: 99
+  Gas: 9
