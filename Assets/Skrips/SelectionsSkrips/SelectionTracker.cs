@@ -10,15 +10,18 @@ public class SelectionTracker : MonoBehaviour
     {
         if (!(thing.layer == 8))
         {
-            int id = thing.GetInstanceID();
-            if (!(selectedTable.ContainsKey(id)))
+            if (!(thing.layer == 9))
             {
-                selectedTable.Add(id, thing);
-                thing.AddComponent<OnSelection>();
-            }
-            else if (shift == true)
-            {
-                DeSelectedThing(id);
+                int id = thing.GetInstanceID();
+                if (!(selectedTable.ContainsKey(id)))
+                {
+                    selectedTable.Add(id, thing);
+                    thing.AddComponent<OnSelection>();
+                }
+                else if (shift == true)
+                {
+                    DeSelectedThing(id);
+                }
             }
         }
     }
