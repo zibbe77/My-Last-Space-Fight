@@ -6,16 +6,10 @@ using UnityEngine.AI;
 public class ShipMove : MonoBehaviour
 {
     Vector3 targetPositionG;
-    Vector3 Position;
     Transform transform;
     LineRenderer lineRenderer;
 
     NavMeshAgent agent;
-
-    [SerializeField] private float Speed = 5f;
-
-    bool Test = false;
-
 
     // Start is called before the first frame update
     void Start()
