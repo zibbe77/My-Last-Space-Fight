@@ -118,15 +118,15 @@ public class UiControler : MonoBehaviour
         for (int i = 0; i < shipCount; i++)
         {
             //resursers
-            mineralsArray[i].text = Shiplist[i].Minerals.ToString();
-            gasArray[i].text = Shiplist[i].Gas.ToString();
+            mineralsArray[i].text = Shiplist[i].minerals.ToString();
+            gasArray[i].text = Shiplist[i].gas.ToString();
 
             //Hp and shilds
             SliderHpArray[i].maxValue = Shiplist[i].MaxHp;
-            SliderHpArray[i].value = Shiplist[i].Hp / 2;
+            SliderHpArray[i].value = Shiplist[i].Hp;
 
             SliderShilidArray[i].maxValue = Shiplist[i].Maxshields;
-            SliderShilidArray[i].value = Shiplist[i].Maxshields / 2;
+            SliderShilidArray[i].value = Shiplist[i].Shield;
         }
     }
 }

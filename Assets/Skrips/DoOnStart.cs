@@ -10,10 +10,10 @@ public class DoOnStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (var i = 0; i < 3; i++)
+        for (var i = 0; i < 5; i++)
         {
             GameObject g = Instantiate(EnemyPrefab) as GameObject;
-            g.transform.position = new Vector3(i * 10, g.transform.position.y, 10 + i * 10);
+            g.transform.position = new Vector3(i * 10, g.transform.position.y, g.transform.position.z + 15);
 
             ListOfAllTargets.TargetList.Add(g);
         }

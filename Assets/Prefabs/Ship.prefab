@@ -161,13 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb836d481ba6e6c4badf684c41bb4bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 100
-  MaxHp: 100
-  shields: 150
-  Maxshields: 150
   dmg: 10
-  Minerals: 99
-  Gas: 9
+  closestEnemy: {fileID: 0}
+  minerals: 100
+  gas: 10
 --- !u!120 &-341086842959333306
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -214,13 +211,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.91355944
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.4678892
+        value: 0.34789255
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -232,8 +229,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.8773585, g: 0.14622633, b: 0.14622633, a: 1}
-      key1: {r: 0.7924528, g: 0, b: 0, a: 1}
+      key0: {r: 0.14509802, g: 0.8784314, b: 0.16168459, a: 1}
+      key1: {r: 0.20392159, g: 0.44705886, b: 0.21176472, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

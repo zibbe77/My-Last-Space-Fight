@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class DetectObjects : MonoBehaviour
 {
-    // Update is called once per frame
+    //obejcts
+    float enemyAtackRaidus = 10;
+
+    //finding targets  
     void Update()
     {
         foreach (GameObject ship in ListOfAllTargets.ShipList)
@@ -22,8 +25,25 @@ public class DetectObjects : MonoBehaviour
             }
 
             // Do after finding closest 
-            Debug.DrawLine(ship.transform.position, nerestObj.transform.position, Color.red);
+            if (nerestDistance < enemyAtackRaidus)
+            {
+                //debug
+                Debug.DrawLine(ship.transform.position, nerestObj.transform.position, Color.red);
 
+                //atack logic prep
+
+                AttackShip(ship, nerestObj);
+            }
         }
+    }
+
+    private void AttackShip(GameObject ship, GameObject nerestObj)
+    {
+        ShipInfo shipInfo = ship.GetComponent<ShipInfo>();
+        Enemyinfo enemyinfo = nerestObj.GetComponent<Enemyinfo>();
+
+        //Ship attack enemy
+
+        //Enemy attack Ship
     }
 }

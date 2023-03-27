@@ -2,10 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipInfo : MonoBehaviour
+public class Enemyinfo : MonoBehaviour
 {
     //ship stuff
-    public int Hp { get; set; }
+
+    public int Hp
+    {
+        get
+        {
+            return Hp;
+        }
+        set
+        {
+            if (value <= 0)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Hp = value;
+            }
+        }
+    }
     public int MaxHp { get; set; }
 
     private int pShield;
@@ -30,20 +48,4 @@ public class ShipInfo : MonoBehaviour
     public int Maxshields { get; set; }
 
     public int dmg;
-
-    //closest enemy
-    public GameObject closestEnemy;
-
-    //resursers 
-    public int minerals;
-    public int gas;
-
-    public ShipInfo()
-    {
-        Hp = 100;
-        MaxHp = 100;
-
-        Shield = 50;
-        Maxshields = 50;
-    }
 }
