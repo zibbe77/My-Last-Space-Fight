@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1453366734905614553}
   - component: {fileID: 1161581375902759855}
   - component: {fileID: 2858117111220568986}
-  - component: {fileID: 5060702118392037349}
   m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
@@ -98,23 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5060702118392037349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2298615974296826333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a13a58268849844cbdc898578085382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 50
-  MaxHp: 50
-  shields: 50
-  Maxshields: 50
-  dmg: 5
 --- !u!1 &3967928076317435772
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3574724265793893027}
+  - component: {fileID: 3642134326520309044}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -147,3 +130,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3642134326520309044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3967928076317435772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a13a58268849844cbdc898578085382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 5

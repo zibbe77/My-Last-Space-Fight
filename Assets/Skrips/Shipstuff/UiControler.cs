@@ -75,58 +75,69 @@ public class UiControler : MonoBehaviour
 
     public void ShipUi()
     {
-        Shiplist.Clear();
-        shipCount = 0;
-
-        foreach (KeyValuePair<int, GameObject> pair in selectionTracker.selectedTable)
+        try
         {
-            if (pair.Value.gameObject.layer == 6)
+            Shiplist.Clear();
+            shipCount = 0;
+
+            foreach (KeyValuePair<int, GameObject> pair in selectionTracker.selectedTable)
             {
-                Shiplist.Add(pair.Value.gameObject.GetComponent<ShipInfo>());
-                shipCount++;
+                if (pair.Value.gameObject != null)
+                {
+                    if (pair.Value.gameObject.layer == 6)
+                    {
+                        Shiplist.Add(pair.Value.gameObject.GetComponent<ShipInfo>());
+                        shipCount++;
+                    }
+                }
+                else
+                {
+                    selectionTracker.selectedTable.Remove(pair.Key);
+                }
+            }
+
+            switch (shipCount)
+            {
+                case 0:
+                    menu1.SetActive(false);
+                    menu2.SetActive(false);
+                    menu3.SetActive(false);
+                    break;
+                case 1:
+                    menu1.SetActive(true);
+
+                    menu2.SetActive(false);
+                    menu3.SetActive(false);
+                    break;
+                case 2:
+                    menu1.SetActive(true);
+                    menu2.SetActive(true);
+
+                    menu3.SetActive(false);
+                    break;
+                case 3:
+                    menu3.SetActive(true);
+                    menu1.SetActive(true);
+                    menu2.SetActive(true);
+                    break;
+            }
+
+
+
+            for (int i = 0; i < shipCount; i++)
+            {
+                //resursers
+                mineralsArray[i].text = Shiplist[i].minerals.ToString();
+                gasArray[i].text = Shiplist[i].gas.ToString();
+
+                //Hp and shilds
+                SliderHpArray[i].maxValue = Shiplist[i].MaxHp;
+                SliderHpArray[i].value = Shiplist[i].Hp;
+
+                SliderShilidArray[i].maxValue = Shiplist[i].Maxshields;
+                SliderShilidArray[i].value = Shiplist[i].Shield;
             }
         }
-
-        switch (shipCount)
-        {
-            case 0:
-                menu1.SetActive(false);
-                menu2.SetActive(false);
-                menu3.SetActive(false);
-                break;
-            case 1:
-                menu1.SetActive(true);
-
-                menu2.SetActive(false);
-                menu3.SetActive(false);
-                break;
-            case 2:
-                menu1.SetActive(true);
-                menu2.SetActive(true);
-
-                menu3.SetActive(false);
-                break;
-            case 3:
-                menu3.SetActive(true);
-                menu1.SetActive(true);
-                menu2.SetActive(true);
-                break;
-        }
-
-
-
-        for (int i = 0; i < shipCount; i++)
-        {
-            //resursers
-            mineralsArray[i].text = Shiplist[i].minerals.ToString();
-            gasArray[i].text = Shiplist[i].gas.ToString();
-
-            //Hp and shilds
-            SliderHpArray[i].maxValue = Shiplist[i].MaxHp;
-            SliderHpArray[i].value = Shiplist[i].Hp;
-
-            SliderShilidArray[i].maxValue = Shiplist[i].Maxshields;
-            SliderShilidArray[i].value = Shiplist[i].Shield;
-        }
+        catch { }
     }
 }

@@ -5,7 +5,26 @@ using UnityEngine;
 public class ShipInfo : MonoBehaviour
 {
     //ship stuff
-    public int Hp { get; set; }
+    private int pHp;
+    public int Hp
+    {
+        get
+        {
+            return pHp;
+        }
+        set
+        {
+            if (value <= 0)
+            {
+                Destroy(this.gameObject);
+                ListOfAllTargets.ShipList.Remove(this.gameObject);
+            }
+            else
+            {
+                pHp = value;
+            }
+        }
+    }
     public int MaxHp { get; set; }
 
     private int pShield;
@@ -17,9 +36,10 @@ public class ShipInfo : MonoBehaviour
         }
         set
         {
-            if (value <= 0)
+            if (value <= 1)
             {
-                Hp = pShield - value;
+                pShield = 0;
+                Hp = Hp + value;
             }
             else
             {

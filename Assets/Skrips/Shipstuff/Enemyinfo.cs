@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class Enemyinfo : MonoBehaviour
 {
-    //ship stuff
 
+    //ship stuff
+    private int pHp;
     public int Hp
     {
         get
         {
-            return Hp;
+            return pHp;
         }
         set
         {
             if (value <= 0)
             {
-                Destroy(this);
+                Destroy(this.gameObject);
+                ListOfAllTargets.TargetList.Remove(this.gameObject);
             }
             else
             {
-                Hp = value;
+                pHp = value;
             }
         }
     }
@@ -35,9 +37,10 @@ public class Enemyinfo : MonoBehaviour
         }
         set
         {
-            if (value <= 0)
+            if (value <= 1)
             {
-                Hp = pShield - value;
+                pShield = 0;
+                Hp = Hp + value;
             }
             else
             {
@@ -48,4 +51,13 @@ public class Enemyinfo : MonoBehaviour
     public int Maxshields { get; set; }
 
     public int dmg;
+
+    public Enemyinfo()
+    {
+        Hp = 50;
+        MaxHp = 50;
+
+        Shield = 50;
+        Maxshields = 50;
+    }
 }
