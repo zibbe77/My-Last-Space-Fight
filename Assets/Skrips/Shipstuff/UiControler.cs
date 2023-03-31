@@ -38,6 +38,7 @@ public class UiControler : MonoBehaviour
     public TextMeshProUGUI gasTop;
     public TextMeshProUGUI miniralsTop;
     public TextMeshProUGUI shipsTop;
+    public GameObject toManyShips;
 
     //Arrays 
     private TextMeshProUGUI[] mineralsArray = new TextMeshProUGUI[3];
@@ -86,6 +87,7 @@ public class UiControler : MonoBehaviour
         ShipUi();
         StasionUi();
         StasionUiTop();
+        ToManyShipsM();
     }
 
     public void ShipUi()
@@ -176,11 +178,21 @@ public class UiControler : MonoBehaviour
 
         stasionMenu.SetActive(stasionIsSelected);
     }
-
     public void StasionUiTop()
     {
         gasTop.text = stasionInfo.gas.ToString();
         miniralsTop.text = stasionInfo.minerals.ToString();
         shipsTop.text = stasionInfo.ship.ToString();
+    }
+    public void ToManyShipsM()
+    {
+        if (ListOfAllTargets.ShipList.Count < 3)
+        {
+            toManyShips.SetActive(false);
+        }
+        else
+        {
+            toManyShips.SetActive(true);
+        }
     }
 }

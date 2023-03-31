@@ -7,6 +7,7 @@ public class StasionDetect : MonoBehaviour
 {
     List<GameObject> shipListClose = new List<GameObject>();
 
+
     public void DoOnRepairClick()
     {
         CheckForShipInRange();
@@ -16,6 +17,20 @@ public class StasionDetect : MonoBehaviour
             shipInfo.Hp = shipInfo.MaxHp;
             shipInfo.Shield = shipInfo.Maxshields;
         }
+    }
+
+    public void NoMoreShips()
+    {
+        if (ListOfAllTargets.ShipList.Count < 3)
+        {
+            CreatShip();
+        }
+    }
+    public void CreatShip()
+    {
+        GameObject g = Instantiate(ListOfAllTargets.ShipPrefab) as GameObject;
+        g.transform.position = new Vector3(3, g.transform.position.y, g.transform.position.z);
+        ListOfAllTargets.ShipList.Add(g);
     }
 
     private void CheckForShipInRange()
