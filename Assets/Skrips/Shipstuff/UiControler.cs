@@ -31,6 +31,13 @@ public class UiControler : MonoBehaviour
     public Slider sliderHp3;
     public Slider slidershild3;
 
+    //Stasion Menu
+    public GameObject stasionMenu;
+
+    //Stasion Menu Top
+    public TextMeshProUGUI gasTop;
+    public TextMeshProUGUI miniralsTop;
+    public TextMeshProUGUI shipsTop;
 
     //Arrays 
     private TextMeshProUGUI[] mineralsArray = new TextMeshProUGUI[3];
@@ -43,6 +50,9 @@ public class UiControler : MonoBehaviour
     SelectionTracker selectionTracker;
 
     int shipCount;
+
+    //stasion 
+    StasionInfo stasionInfo;
 
     // Start is called before the first frame update
     void Start()
@@ -65,12 +75,17 @@ public class UiControler : MonoBehaviour
         SliderShilidArray[0] = slidershild1;
         SliderShilidArray[1] = slidershild2;
         SliderShilidArray[2] = slidershild3;
+
+        //stasion top ui 
+        stasionInfo = ListOfAllTargets.Stasion.GetComponent<StasionInfo>();
     }
 
     // Update is called once per frame
     void Update()
     {
         ShipUi();
+        StasionUi();
+        StasionUiTop();
     }
 
     public void ShipUi()
@@ -139,5 +154,33 @@ public class UiControler : MonoBehaviour
             }
         }
         catch { }
+    }
+    public void StasionUi()
+    {
+        bool stasionIsSelected = false;
+
+        foreach (KeyValuePair<int, GameObject> pair in selectionTracker.selectedTable)
+        {
+            if (pair.Value.gameObject != null)
+            {
+                if (pair.Value.gameObject.layer == 10)
+                {
+                    stasionIsSelected = true;
+                }
+            }
+            else
+            {
+                selectionTracker.selectedTable.Remove(pair.Key);
+            }
+        }
+
+        stasionMenu.SetActive(stasionIsSelected);
+    }
+
+    public void StasionUiTop()
+    {
+        gasTop.text = stasionInfo.gas.ToString();
+        miniralsTop.text = stasionInfo.minerals.ToString();
+        shipsTop.text = stasionInfo.ship.ToString();
     }
 }

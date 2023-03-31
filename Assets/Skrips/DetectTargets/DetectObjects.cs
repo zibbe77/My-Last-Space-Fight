@@ -6,6 +6,7 @@ public class DetectObjects : MonoBehaviour
 {
     //obejcts
     float enemyAtackRaidus = 10;
+    float stasionRaidus = 5;
 
     //finding targets  
     void Update()
@@ -26,15 +27,15 @@ public class DetectObjects : MonoBehaviour
                     }
                 }
 
-                // Do after finding closest 
-                if (nerestDistance < enemyAtackRaidus)
+                //checks if its an emeny
+                if (nerestObj.layer == 9)
                 {
-                    //debug
-                    Debug.DrawLine(ship.transform.position, nerestObj.transform.position, Color.red);
-
-                    //atack logic prep
-
-                    AttackShip(ship, nerestObj);
+                    // Do after finding closest 
+                    if (nerestDistance < enemyAtackRaidus)
+                    {
+                        //atack logic prep
+                        AttackShip(ship, nerestObj);
+                    }
                 }
             }
         }

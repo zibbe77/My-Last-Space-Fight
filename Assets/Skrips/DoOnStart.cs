@@ -6,10 +6,12 @@ public class DoOnStart : MonoBehaviour
 {
     public GameObject shipPrefab;
     public GameObject EnemyPrefab;
+    public GameObject Stasion;
 
     // Start is called before the first frame update
     void Start()
     {
+        //creats enemys
         for (var i = 0; i < 5; i++)
         {
             GameObject g = Instantiate(EnemyPrefab) as GameObject;
@@ -22,7 +24,7 @@ public class DoOnStart : MonoBehaviour
         for (var i = 0; i < 3; i++)
         {
             GameObject g = Instantiate(shipPrefab) as GameObject;
-            g.transform.position = new Vector3(i * 10, g.transform.position.y, g.transform.position.z);
+            g.transform.position = new Vector3(5 + i * 10, g.transform.position.y, g.transform.position.z);
 
             ListOfAllTargets.ShipList.Add(g);
         }
