@@ -8,4 +8,5 @@ public static class ListOfAllTargets
     public static List<GameObject> ShipList = new List<GameObject>();
     public static List<GameObject> TargetList = new List<GameObject>();
     public static GameObject Stasion;
+    public static GameObject shipPrefab;
 }

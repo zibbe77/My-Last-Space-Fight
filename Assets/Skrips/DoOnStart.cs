@@ -28,6 +28,10 @@ public class DoOnStart : MonoBehaviour
 
             ListOfAllTargets.ShipList.Add(g);
         }
+
+        //Creats a refrence to the the prefab.
+        ListOfAllTargets.shipPrefab = shipPrefab;
+
     }
 
     // Update is called once per frame
