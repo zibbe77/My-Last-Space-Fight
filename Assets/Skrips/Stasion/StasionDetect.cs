@@ -28,7 +28,7 @@ public class StasionDetect : MonoBehaviour
     }
     public void CreatShip()
     {
-        GameObject g = Instantiate(ListOfAllTargets.ShipPrefab) as GameObject;
+        GameObject g = Instantiate(ListOfAllTargets.shipPrefab) as GameObject;
         g.transform.position = new Vector3(3, g.transform.position.y, g.transform.position.z);
         ListOfAllTargets.ShipList.Add(g);
     }
