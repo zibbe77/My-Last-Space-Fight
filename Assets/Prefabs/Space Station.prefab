@@ -251,5 +251,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195dea0c2df33514b8c0629893277280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minerals: 50
-  gas: 5
+  minerals: 150
+  gas: 15

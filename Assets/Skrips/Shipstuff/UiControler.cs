@@ -180,6 +180,7 @@ public class UiControler : MonoBehaviour
     }
     public void StasionUiTop()
     {
+        //print(stasionInfo.minerals);
         gasTop.text = stasionInfo.gas.ToString();
         miniralsTop.text = stasionInfo.minerals.ToString();
         shipsTop.text = stasionInfo.ship.ToString();

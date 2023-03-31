@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class StasionInfo : MonoBehaviour
 {
+    private void Start()
+    {
+        minerals = 150;
+    }
+
     //resursers 
-    public int minerals;
+    public int minerals { get; set; }
     public int gas;
 
     //ships
@@ -22,4 +27,5 @@ public class StasionInfo : MonoBehaviour
             shipPri = ListOfAllTargets.ShipList.Count;
         }
     }
+
 }
