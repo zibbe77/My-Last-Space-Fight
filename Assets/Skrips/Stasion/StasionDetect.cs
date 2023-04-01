@@ -32,8 +32,6 @@ public class StasionDetect : MonoBehaviour
     public void DoOnRepairClick()
     {
         stasionInfo = ListOfAllTargets.Stasion.GetComponent<StasionInfo>();
-        print(stasionInfo.gas);
-        print(stasionInfo.minerals);
 
         if (stasionInfo.gas > 10 && stasionInfo.minerals > 100)
         {
