@@ -54,6 +54,11 @@ public class UiControler : MonoBehaviour
 
     //stasion 
     StasionInfo stasionInfo;
+    public TextMeshProUGUI stasionCostMin1;
+    public TextMeshProUGUI stasionCostGas1;
+
+    public TextMeshProUGUI stasionCostMin2;
+    public TextMeshProUGUI stasionCostGas2;
 
     // Start is called before the first frame update
     void Start()
@@ -88,6 +93,7 @@ public class UiControler : MonoBehaviour
         StasionUi();
         StasionUiTop();
         ToManyShipsM();
+        SetStasionNubersRed();
     }
 
     public void ShipUi()
@@ -177,6 +183,48 @@ public class UiControler : MonoBehaviour
         }
 
         stasionMenu.SetActive(stasionIsSelected);
+    }
+    private void SetStasionNubersRed()
+    {
+
+        //Repair
+        if (stasionInfo.minerals < 100)
+        {
+            stasionCostMin1.color = Color.red;
+        }
+        else
+        {
+            stasionCostMin1.color = Color.black;
+        }
+
+
+        if (stasionInfo.gas < 10)
+        {
+            stasionCostGas1.color = Color.red;
+        }
+        else
+        {
+            stasionCostGas1.color = Color.black;
+        }
+
+        //Creat ship
+        if (stasionInfo.minerals < 200)
+        {
+            stasionCostMin2.color = Color.red;
+        }
+        else
+        {
+            stasionCostMin2.color = Color.black;
+        }
+
+        if (stasionInfo.gas < 20)
+        {
+            stasionCostGas2.color = Color.red;
+        }
+        else
+        {
+            stasionCostGas2.color = Color.black;
+        }
     }
     public void StasionUiTop()
     {
