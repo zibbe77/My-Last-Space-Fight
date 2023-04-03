@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 1104756416592140043}
   - component: {fileID: 3955171831682373046}
   - component: {fileID: -341086842959333306}
+  - component: {fileID: 4674278714156250527}
+  - component: {fileID: 3575027244457755136}
   m_Layer: 6
   m_Name: Ship
   m_TagString: Untagged
@@ -114,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5b989e46d4d384289fe07dc7608bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
 --- !u!114 &2770849770843357755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,3 +265,31 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &4674278714156250527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527332926389234673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83355cbc0a1460846bcae6ffcd1e9a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &3575027244457755136
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527332926389234673}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

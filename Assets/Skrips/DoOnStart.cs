@@ -7,6 +7,7 @@ public class DoOnStart : MonoBehaviour
     public GameObject shipPrefab;
     public GameObject EnemyPrefab;
     public GameObject Stasion;
+    public GameObject pickUp;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,9 @@ public class DoOnStart : MonoBehaviour
 
         //Creats a refrence to the the prefab.
         ListOfAllTargets.shipPrefab = shipPrefab;
+
+        //creats a pickup prefab recrende 
+        ListOfAllTargets.pickUp = pickUp;
 
     }
 

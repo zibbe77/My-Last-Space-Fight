@@ -4595,6 +4595,7 @@ MonoBehaviour:
   shipPrefab: {fileID: 527332926389234673, guid: a47e1e33367b6cb459231385d89bce83, type: 3}
   EnemyPrefab: {fileID: 3967928076317435772, guid: dd5d4a28a007b1742a6fb2487c52c4ae, type: 3}
   Stasion: {fileID: 3543014999286372142, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
+  pickUp: {fileID: 8526002396420361292, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
 --- !u!114 &963194234
 MonoBehaviour:
   m_ObjectHideFlags: 0

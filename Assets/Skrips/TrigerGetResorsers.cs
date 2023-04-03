@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class TrigerGetResorsers : MonoBehaviour
 {
-    SphereCollider sphereCollider;
-    // Start is called before the first frame update
-    void Start()
-    {
-        sphereCollider = GetComponent<SphereCollider>();
-    }
-
     void OnTriggerEnter(Collider other)
     {
-        print("w");
+        ShipInfo shipInfo = this.GetComponent<ShipInfo>();
+        shipInfo.gas += 5;
+        shipInfo.minerals += 50;
+
+        Destroy(other.gameObject);
     }
 }

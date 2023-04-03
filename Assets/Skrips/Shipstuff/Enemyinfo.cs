@@ -17,6 +17,9 @@ public class Enemyinfo : MonoBehaviour
         {
             if (value <= 0)
             {
+                GameObject g = Instantiate(ListOfAllTargets.pickUp) as GameObject;
+                g.transform.position = this.gameObject.transform.position;
+
                 Destroy(this.gameObject);
                 ListOfAllTargets.TargetList.Remove(this.gameObject);
             }
