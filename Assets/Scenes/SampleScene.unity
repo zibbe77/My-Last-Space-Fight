@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 5093400}
   - component: {fileID: 5093402}
   - component: {fileID: 5093401}
+  - component: {fileID: 5093403}
   m_Layer: 5
   m_Name: backgrund
   m_TagString: Untagged
@@ -200,6 +201,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5093399}
   m_CullTransparentMesh: 1
+--- !u!114 &5093403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a644ad53dfefd764ba61ee103955c0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uppgradeNumber: {fileID: 0}
+  gasValue: {fileID: 0}
+  mineralValue: {fileID: 0}
+  gasValueInt: 0
+  mineralValueint: 0
+  selectionTracker: {fileID: 963194229}
+  uppgradesUiObj: {fileID: 0}
+  stasionInfo: {fileID: 530182797}
+  uppValue: 0
 --- !u!1 &16915353
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +860,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 95308291}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5093403}
+        m_TargetAssemblyTypeName: Uppgrades, Assembly-CSharp
+        m_MethodName: OnBuy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &95308293
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1048,8 +1082,11 @@ MonoBehaviour:
   uppgradeNumber: {fileID: 1716189486}
   gasValue: {fileID: 1597930474}
   mineralValue: {fileID: 85895436}
+  gasValueInt: 0
+  mineralValueint: 0
   selectionTracker: {fileID: 963194229}
   uppgradesUiObj: {fileID: 243727381}
+  stasionInfo: {fileID: 0}
   uppValue: 450
 --- !u!1 &180866201
 GameObject:
@@ -1498,7 +1535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &243727382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1577,8 +1614,11 @@ MonoBehaviour:
   uppgradeNumber: {fileID: 1716189486}
   gasValue: {fileID: 1597930474}
   mineralValue: {fileID: 85895436}
+  gasValueInt: 0
+  mineralValueint: 0
   selectionTracker: {fileID: 963194229}
   uppgradesUiObj: {fileID: 243727381}
+  stasionInfo: {fileID: 0}
   uppValue: 275
 --- !u!1 &263775238
 GameObject:
@@ -2648,6 +2688,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85319196f2355ac499bd59942d12aee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &530182797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4823913911122094123, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
+  m_PrefabInstance: {fileID: 869851842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195dea0c2df33514b8c0629893277280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &535719019
@@ -5320,6 +5371,7 @@ MonoBehaviour:
   stasionCostGas1: {fileID: 2084431897}
   stasionCostMin2: {fileID: 1332161434}
   stasionCostGas2: {fileID: 428868016}
+  uppgradesUiObj: {fileID: 243727381}
 --- !u!114 &963194233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11643,6 +11695,9 @@ MonoBehaviour:
   uppgradeNumber: {fileID: 1716189486}
   gasValue: {fileID: 1597930474}
   mineralValue: {fileID: 85895436}
+  gasValueInt: 0
+  mineralValueint: 0
   selectionTracker: {fileID: 963194229}
   uppgradesUiObj: {fileID: 243727381}
+  stasionInfo: {fileID: 0}
   uppValue: 104

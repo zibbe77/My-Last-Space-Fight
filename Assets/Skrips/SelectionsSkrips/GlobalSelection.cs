@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class GlobalSelection : MonoBehaviour
 {
@@ -63,6 +64,8 @@ public class GlobalSelection : MonoBehaviour
         {
             if (dragSelect == false)
             {
+                if (EventSystem.current.IsPointerOverGameObject()) { return; }
+
                 Ray ray = Camera.main.ScreenPointToRay(p1);
 
                 if (Physics.Raycast(ray, out hit, 5000f))

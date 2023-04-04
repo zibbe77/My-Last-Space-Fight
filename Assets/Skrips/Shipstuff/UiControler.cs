@@ -59,6 +59,7 @@ public class UiControler : MonoBehaviour
 
     public TextMeshProUGUI stasionCostMin2;
     public TextMeshProUGUI stasionCostGas2;
+    public GameObject uppgradesUiObj;
 
     // Start is called before the first frame update
     void Start()
@@ -125,6 +126,7 @@ public class UiControler : MonoBehaviour
                     menu1.SetActive(false);
                     menu2.SetActive(false);
                     menu3.SetActive(false);
+                    uppgradesUiObj.SetActive(false);
                     break;
                 case 1:
                     menu1.SetActive(true);

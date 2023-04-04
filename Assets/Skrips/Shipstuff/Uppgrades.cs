@@ -10,11 +10,15 @@ public class Uppgrades : MonoBehaviour
     public TextMeshProUGUI gasValue;
     public TextMeshProUGUI mineralValue;
 
+    public int gasValueInt;
+    public int mineralValueint;
+
     //all
     public SelectionTracker selectionTracker;
     public GameObject uppgradesUiObj;
     bool active = false;
     GameObject ship;
+    public StasionInfo stasionInfo;
 
     [SerializeField] private int uppValue;
 
@@ -28,11 +32,12 @@ public class Uppgrades : MonoBehaviour
         gasValue.text = "5";
         mineralValue.text = "50";
 
-        //uppgrade Ship
-        ship = CheckShip();
-        UppgradeShip(ship);
+        gasValueInt = 5;
+        mineralValueint = 50;
 
         //set active
+
+        active = uppgradesUiObj.active;
         active = !active;
         uppgradesUiObj.SetActive(active);
     }
@@ -46,6 +51,9 @@ public class Uppgrades : MonoBehaviour
         uppgradeNumber.text = "2";
         gasValue.text = "10";
         mineralValue.text = "100";
+
+        gasValueInt = 10;
+        mineralValueint = 100;
 
         //set active
         active = !active;
@@ -62,9 +70,24 @@ public class Uppgrades : MonoBehaviour
         gasValue.text = "15";
         mineralValue.text = "150";
 
+        gasValueInt = 15;
+        mineralValueint = 150;
         //set active
         active = !active;
         uppgradesUiObj.SetActive(active);
+    }
+
+    public void OnBuy()
+    {
+        //uppgrade Ship
+        ship = CheckShip();
+
+        if (stasionInfo.gas > gasValueInt && stasionInfo.minerals > mineralValueint)
+        {
+            stasionInfo.gas -= gasValueInt;
+            stasionInfo.minerals -= mineralValueint;
+            UppgradeShip(ship);
+        }
     }
 
     private GameObject CheckShip()
