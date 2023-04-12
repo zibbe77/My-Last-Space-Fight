@@ -10,5 +10,5 @@ public static class ListOfAllTargets
     public static GameObject Stasion;
     public static GameObject shipPrefab;
     public static GameObject pickUp;
-
+    public static GameObject marker;
 }

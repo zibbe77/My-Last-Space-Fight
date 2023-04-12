@@ -8,6 +8,7 @@ public class DoOnStart : MonoBehaviour
     public GameObject EnemyPrefab;
     public GameObject Stasion;
     public GameObject pickUp;
+    public GameObject markerPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,9 @@ public class DoOnStart : MonoBehaviour
 
         //creats a pickup prefab recrende 
         ListOfAllTargets.pickUp = pickUp;
+
+        //Saves a refrence to the marker
+        ListOfAllTargets.marker = markerPrefab;
 
     }
 

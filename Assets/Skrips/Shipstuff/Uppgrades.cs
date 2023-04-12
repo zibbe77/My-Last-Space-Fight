@@ -21,6 +21,9 @@ public class Uppgrades : MonoBehaviour
     public StasionInfo stasionInfo;
 
     [SerializeField] private int uppValue;
+    [SerializeField] private int shipValue;
+    static private int internalShipValue;
+    static private int uppgradeSlot;
 
     public void OnFirstUppgrade()
     {
@@ -31,6 +34,9 @@ public class Uppgrades : MonoBehaviour
         uppgradeNumber.text = "1";
         gasValue.text = "5";
         mineralValue.text = "50";
+
+        internalShipValue = shipValue;
+        uppgradeSlot = 0;
 
         gasValueInt = 5;
         mineralValueint = 50;
@@ -52,6 +58,9 @@ public class Uppgrades : MonoBehaviour
         gasValue.text = "10";
         mineralValue.text = "100";
 
+        internalShipValue = shipValue;
+        uppgradeSlot = 1;
+
         gasValueInt = 10;
         mineralValueint = 100;
 
@@ -70,6 +79,9 @@ public class Uppgrades : MonoBehaviour
         gasValue.text = "15";
         mineralValue.text = "150";
 
+        internalShipValue = shipValue;
+        uppgradeSlot = 2;
+
         gasValueInt = 15;
         mineralValueint = 150;
         //set active
@@ -80,17 +92,23 @@ public class Uppgrades : MonoBehaviour
     public void OnBuy()
     {
         //uppgrade Ship
-        ship = CheckShip();
+        ship = CheckShip(internalShipValue);
 
-        if (stasionInfo.gas > gasValueInt && stasionInfo.minerals > mineralValueint)
+        ShipInfo shipInfo = ship.GetComponent<ShipInfo>();
+
+        if (shipInfo.uppgradeList[uppgradeSlot] == false)
         {
-            stasionInfo.gas -= gasValueInt;
-            stasionInfo.minerals -= mineralValueint;
-            UppgradeShip(ship);
+            if (stasionInfo.gas > gasValueInt && stasionInfo.minerals > mineralValueint)
+            {
+                stasionInfo.gas -= gasValueInt;
+                stasionInfo.minerals -= mineralValueint;
+                UppgradeShip(ship);
+                shipInfo.uppgradeList[uppgradeSlot] = true;
+            }
         }
     }
 
-    private GameObject CheckShip()
+    private GameObject CheckShip(int shipValueloc)
     {
         List<GameObject> ships = new List<GameObject>();
 
@@ -105,7 +123,7 @@ public class Uppgrades : MonoBehaviour
             }
         }
 
-        return ships[ships.Count - 1];
+        return ships[shipValueloc];
     }
     private void UppgradeShip(GameObject s)
     {

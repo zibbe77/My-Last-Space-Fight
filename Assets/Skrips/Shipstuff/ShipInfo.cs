@@ -58,6 +58,9 @@ public class ShipInfo : MonoBehaviour
     public int minerals;
     public int gas;
 
+    //uppgrades
+    public bool[] uppgradeList = { false, false, false };
+
     public ShipInfo()
     {
         Hp = 100;

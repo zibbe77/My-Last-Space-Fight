@@ -4,14 +4,33 @@ using UnityEngine;
 
 public class OnSelection : MonoBehaviour
 {
+    GameObject marker;
+    GameObject g;
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Renderer>().material.color = Color.red;
+        marker = ListOfAllTargets.marker;
+        CreatMarker();
+    }
+    void Update()
+    {
+        SetMarker();
+    }
+
+    void CreatMarker()
+    {
+        g = Instantiate(marker) as GameObject;
+        SetMarker();
+    }
+
+    void SetMarker()
+    {
+        g.transform.position = this.transform.position;
     }
 
     private void OnDestroy()
     {
-        GetComponent<Renderer>().material.color = Color.white;
+        Destroy(g);
     }
 }

@@ -130,14 +130,12 @@ public class UiControler : MonoBehaviour
                     break;
                 case 1:
                     menu1.SetActive(true);
-
                     menu2.SetActive(false);
                     menu3.SetActive(false);
                     break;
                 case 2:
                     menu1.SetActive(true);
                     menu2.SetActive(true);
-
                     menu3.SetActive(false);
                     break;
                 case 3:

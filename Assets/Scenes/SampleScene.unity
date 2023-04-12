@@ -222,6 +222,7 @@ MonoBehaviour:
   uppgradesUiObj: {fileID: 0}
   stasionInfo: {fileID: 530182797}
   uppValue: 0
+  shipValue: 0
 --- !u!1 &16915353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1089,7 @@ MonoBehaviour:
   uppgradesUiObj: {fileID: 243727381}
   stasionInfo: {fileID: 0}
   uppValue: 450
+  shipValue: 2
 --- !u!1 &180866201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1622,7 @@ MonoBehaviour:
   uppgradesUiObj: {fileID: 243727381}
   stasionInfo: {fileID: 0}
   uppValue: 275
+  shipValue: 1
 --- !u!1 &263775238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,7 +2146,7 @@ Transform:
   m_Children:
   - {fileID: 1656608891}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &338936865
 LineRenderer:
@@ -4837,7 +4840,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3543014999286372138, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3543014999286372138, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5206,7 +5209,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -5388,6 +5391,7 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 3967928076317435772, guid: dd5d4a28a007b1742a6fb2487c52c4ae, type: 3}
   Stasion: {fileID: 3543014999286372142, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
   pickUp: {fileID: 8526002396420361292, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
+  markerPrefab: {fileID: 564521268266261391, guid: 56e27f5468b9298468be0457ed060544, type: 3}
 --- !u!114 &963194234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5645,7 +5649,7 @@ RectTransform:
   - {fileID: 208164222}
   - {fileID: 243727382}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7119,6 +7123,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259383916}
   m_CullTransparentMesh: 1
+--- !u!1 &1294888245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1294888246}
+  m_Layer: 0
+  m_Name: LaserbeamVFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1294888246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294888245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -108.23015, y: -171.79211, z: 111.59414}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1297484514
 GameObject:
   m_ObjectHideFlags: 0
@@ -8160,63 +8195,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460045791}
   m_CullTransparentMesh: 1
---- !u!1001 &1490956931
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.48207
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.59339905
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1501444858012983773, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8526002396420361292, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
-      propertyPath: m_Name
-      value: GetStuff
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 33fc05c095be1024cacb4b6a58e315d4, type: 3}
 --- !u!1 &1501800725
 GameObject:
   m_ObjectHideFlags: 0
@@ -10743,7 +10721,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949907065
 GameObject:
@@ -11701,3 +11679,4 @@ MonoBehaviour:
   uppgradesUiObj: {fileID: 243727381}
   stasionInfo: {fileID: 0}
   uppValue: 104
+  shipValue: 0
