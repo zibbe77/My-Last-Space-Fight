@@ -17,9 +17,11 @@ public class Enemyinfo : MonoBehaviour
         {
             if (value <= 0)
             {
-                GameObject g = Instantiate(ListOfAllTargets.pickUp) as GameObject;
-                g.transform.position = this.gameObject.transform.position;
+                //creat explosion
+                GameObject e = Instantiate(ListOfAllTargets.explosionprefab) as GameObject;
+                e.transform.position = this.gameObject.transform.position;
 
+                //destroys it self
                 Destroy(this.gameObject);
                 ListOfAllTargets.TargetList.Remove(this.gameObject);
             }
@@ -54,6 +56,22 @@ public class Enemyinfo : MonoBehaviour
     public int Maxshields { get; set; }
 
     public int dmg;
+
+    //timers
+    //Ship atack timer
+    public float timeBase = 1;
+    public float timeSet = 1;
+
+    //ship laser timer
+    public float LaserTimeBase = 0.4f;
+    public float LaserTimeSet = 0.4f;
+
+    //laser
+    public LineRenderer lineRendererToMakeLaser;
+    public Transform transformFirePoint;
+
+    //turet
+    public GameObject gun;
 
     public Enemyinfo()
     {

@@ -9,6 +9,7 @@ public class DoOnStart : MonoBehaviour
     public GameObject Stasion;
     public GameObject pickUp;
     public GameObject markerPrefab;
+    public GameObject explosonPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -17,13 +18,13 @@ public class DoOnStart : MonoBehaviour
         for (var i = 0; i < 5; i++)
         {
             GameObject g = Instantiate(EnemyPrefab) as GameObject;
-            g.transform.position = new Vector3(i * 10, g.transform.position.y, g.transform.position.z + 15);
+            g.transform.position = new Vector3((i * 25) - 75, g.transform.position.y, g.transform.position.z + 15);
 
             ListOfAllTargets.TargetList.Add(g);
         }
 
         //Creats frendly ships
-        for (var i = 0; i < 3; i++)
+        for (var i = 0; i < 2; i++)
         {
             GameObject g = Instantiate(shipPrefab) as GameObject;
             g.transform.position = new Vector3(5 + i * 10, g.transform.position.y, g.transform.position.z);
@@ -39,6 +40,9 @@ public class DoOnStart : MonoBehaviour
 
         //Saves a refrence to the marker
         ListOfAllTargets.marker = markerPrefab;
+
+        //saves a refrence to the vfx explosen prefab
+        ListOfAllTargets.explosionprefab = explosonPrefab;
 
     }
 

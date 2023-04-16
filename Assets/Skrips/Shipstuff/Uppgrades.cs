@@ -10,15 +10,15 @@ public class Uppgrades : MonoBehaviour
     public TextMeshProUGUI gasValue;
     public TextMeshProUGUI mineralValue;
 
-    public int gasValueInt;
-    public int mineralValueint;
+    public static int gasValueInt;
+    public static int mineralValueint;
 
     //all
     public SelectionTracker selectionTracker;
     public GameObject uppgradesUiObj;
     bool active = false;
     GameObject ship;
-    public StasionInfo stasionInfo;
+    private StasionInfo stasionInfo;
 
     [SerializeField] private int uppValue;
     [SerializeField] private int shipValue;
@@ -40,6 +40,8 @@ public class Uppgrades : MonoBehaviour
 
         gasValueInt = 5;
         mineralValueint = 50;
+
+        CheckCost();
 
         //set active
 
@@ -64,6 +66,8 @@ public class Uppgrades : MonoBehaviour
         gasValueInt = 10;
         mineralValueint = 100;
 
+        CheckCost();
+
         //set active
         active = !active;
         uppgradesUiObj.SetActive(active);
@@ -84,6 +88,9 @@ public class Uppgrades : MonoBehaviour
 
         gasValueInt = 15;
         mineralValueint = 150;
+
+        CheckCost();
+
         //set active
         active = !active;
         uppgradesUiObj.SetActive(active);
@@ -91,6 +98,8 @@ public class Uppgrades : MonoBehaviour
 
     public void OnBuy()
     {
+        stasionInfo = ListOfAllTargets.Stasion.GetComponent<StasionInfo>();
+
         //uppgrade Ship
         ship = CheckShip(internalShipValue);
 
@@ -98,10 +107,11 @@ public class Uppgrades : MonoBehaviour
 
         if (shipInfo.uppgradeList[uppgradeSlot] == false)
         {
-            if (stasionInfo.gas > gasValueInt && stasionInfo.minerals > mineralValueint)
+            if (stasionInfo.gas >= gasValueInt && stasionInfo.minerals >= mineralValueint)
             {
                 stasionInfo.gas -= gasValueInt;
                 stasionInfo.minerals -= mineralValueint;
+
                 UppgradeShip(ship);
                 shipInfo.uppgradeList[uppgradeSlot] = true;
             }
@@ -130,5 +140,28 @@ public class Uppgrades : MonoBehaviour
         ShipInfo shipInfo = s.GetComponent<ShipInfo>();
         shipInfo.MaxHp += 25;
         shipInfo.Maxshields += 25;
+    }
+
+    private void CheckCost()
+    {
+        stasionInfo = ListOfAllTargets.Stasion.GetComponent<StasionInfo>();
+
+        if (stasionInfo.gas >= gasValueInt)
+        {
+            gasValue.color = Color.black;
+        }
+        else
+        {
+            gasValue.color = Color.red;
+        }
+
+        if (stasionInfo.minerals >= mineralValueint)
+        {
+            mineralValue.color = Color.black;
+        }
+        else
+        {
+            mineralValue.color = Color.red;
+        }
     }
 }

@@ -299,9 +299,9 @@ public class NewCamraControler : MonoBehaviour
     #region Devtools
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 5f);
-        Gizmos.DrawWireCube(Vector3.zero, new Vector3(boundsRange.x * 2f, 5f, boundsRange.y * 2f));
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawSphere(transform.position, 5f);
+        //Gizmos.DrawWireCube(Vector3.zero, new Vector3(boundsRange.x * 2f, 5f, boundsRange.y * 2f));
     }
     #endregion
 }

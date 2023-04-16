@@ -14,6 +14,11 @@ public class UiControler : MonoBehaviour
     public Slider sliderHp1;
     public Slider slidershild1;
 
+    //upgrades 
+    public GameObject menu1slot1;
+    public GameObject menu1slot2;
+    public GameObject menu1slot3;
+
 
     //Menu 2
     public GameObject menu2;
@@ -23,6 +28,11 @@ public class UiControler : MonoBehaviour
     public Slider sliderHp2;
     public Slider slidershild2;
 
+    //upgrades 
+    public GameObject menu2slot1;
+    public GameObject menu2slot2;
+    public GameObject menu2slot3;
+
     //Menu 3
     public GameObject menu3;
     public TextMeshProUGUI miniralsMenu3;
@@ -30,6 +40,11 @@ public class UiControler : MonoBehaviour
 
     public Slider sliderHp3;
     public Slider slidershild3;
+
+    //upgrades 
+    public GameObject menu3slot1;
+    public GameObject menu3slot2;
+    public GameObject menu3slot3;
 
     //Stasion Menu
     public GameObject stasionMenu;
@@ -45,6 +60,7 @@ public class UiControler : MonoBehaviour
     private TextMeshProUGUI[] gasArray = new TextMeshProUGUI[3];
     private Slider[] SliderHpArray = new Slider[3];
     private Slider[] SliderShilidArray = new Slider[3];
+    private GameObject[,] imageArray = new GameObject[3, 3];
 
     //general
     public List<ShipInfo> Shiplist = new List<ShipInfo>();
@@ -85,6 +101,20 @@ public class UiControler : MonoBehaviour
 
         //stasion top ui 
         stasionInfo = ListOfAllTargets.Stasion.GetComponent<StasionInfo>();
+
+        //uppgrades
+        imageArray[0, 0] = menu1slot1;
+        imageArray[0, 1] = menu1slot2;
+        imageArray[0, 2] = menu1slot3;
+
+        imageArray[1, 0] = menu2slot1;
+        imageArray[1, 1] = menu2slot2;
+        imageArray[1, 2] = menu2slot3;
+
+        imageArray[2, 0] = menu3slot1;
+        imageArray[2, 1] = menu3slot2;
+        imageArray[2, 2] = menu3slot3;
+
     }
 
     // Update is called once per frame
@@ -159,6 +189,21 @@ public class UiControler : MonoBehaviour
 
                 SliderShilidArray[i].maxValue = Shiplist[i].Maxshields;
                 SliderShilidArray[i].value = Shiplist[i].Shield;
+            }
+
+            for (var i = 0; i < shipCount; i++)
+            {
+                for (int ii = 0; ii < Shiplist[i].uppgradeList.Length; ii++)
+                {
+                    if (Shiplist[i].uppgradeList[ii] == true)
+                    {
+                        imageArray[i, ii].SetActive(true);
+                    }
+                    else
+                    {
+                        imageArray[i, ii].SetActive(false);
+                    }
+                }
             }
         }
         catch { }

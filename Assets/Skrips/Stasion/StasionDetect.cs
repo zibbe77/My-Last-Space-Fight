@@ -11,7 +11,6 @@ public class StasionDetect : MonoBehaviour
     private void Start()
     {
         stasionInfo = ListOfAllTargets.Stasion.GetComponent<StasionInfo>();
-
     }
 
     private void Update()
@@ -33,7 +32,7 @@ public class StasionDetect : MonoBehaviour
     {
         stasionInfo = ListOfAllTargets.Stasion.GetComponent<StasionInfo>();
 
-        if (stasionInfo.gas > 10 && stasionInfo.minerals > 100)
+        if (stasionInfo.gas >= 10 && stasionInfo.minerals >= 100)
         {
             stasionInfo.gas -= 10;
             stasionInfo.minerals -= 100;
@@ -53,7 +52,7 @@ public class StasionDetect : MonoBehaviour
         stasionInfo = ListOfAllTargets.Stasion.GetComponent<StasionInfo>();
         if (ListOfAllTargets.ShipList.Count < 3)
         {
-            if (stasionInfo.gas > 20 && stasionInfo.minerals > 200)
+            if (stasionInfo.gas >= 20 && stasionInfo.minerals >= 200)
             {
                 stasionInfo.gas -= 20;
                 stasionInfo.minerals -= 200;

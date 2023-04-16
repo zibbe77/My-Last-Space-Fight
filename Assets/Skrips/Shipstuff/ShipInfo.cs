@@ -16,6 +16,10 @@ public class ShipInfo : MonoBehaviour
         {
             if (value <= 0)
             {
+                GameObject e = Instantiate(ListOfAllTargets.explosionprefab) as GameObject;
+                e.transform.position = this.gameObject.transform.position;
+                e.layer = 6;
+
                 Destroy(this.gameObject);
                 ListOfAllTargets.ShipList.Remove(this.gameObject);
             }
@@ -58,9 +62,23 @@ public class ShipInfo : MonoBehaviour
     public int minerals;
     public int gas;
 
+    //Ship atack timer
+    public float timeBase = 1;
+    public float timeSet = 1;
+
+    //ship laser timer
+    public float LaserTimeBase = 0.4f;
+    public float LaserTimeSet = 0.4f;
+
+    //laser
+    public LineRenderer lineRendererToMakeLaser;
+    public Transform transformFirePoint;
+
     //uppgrades
     public bool[] uppgradeList = { false, false, false };
 
+    //turet
+    public GameObject gun;
     public ShipInfo()
     {
         Hp = 100;
