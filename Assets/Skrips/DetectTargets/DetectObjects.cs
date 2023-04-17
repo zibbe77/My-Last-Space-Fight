@@ -24,6 +24,12 @@ public class DetectObjects : MonoBehaviour
                     {
                         nerestDistance = Vector3.Distance(ship.transform.position, target.transform.position);
                         nerestObj = target;
+
+                        Enemyinfo enemyinfo = nerestObj.GetComponent<Enemyinfo>();
+                        if (enemyinfo.LaserTimeSet < 0)
+                        {
+                            enemyinfo.lineRendererToMakeLaser.enabled = false;
+                        }
                     }
                 }
 
