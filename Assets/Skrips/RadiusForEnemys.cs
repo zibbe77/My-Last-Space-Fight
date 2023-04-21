@@ -29,12 +29,6 @@ public class RadiusForEnemys : MonoBehaviour
 
         lineRenderer.SetPositions(points);
     }
-
-    public void SetOrbit(Vector3[] points)
-    {
-
-    }
-
 }
 
 

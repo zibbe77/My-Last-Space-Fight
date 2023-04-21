@@ -14,7 +14,7 @@ public class WinOrLose : MonoBehaviour
             TestClearStuff();
             SceneManager.LoadScene(4);
         }
-        if (ListOfAllTargets.ShipList.Count == 0 && stasionInfo.gas < 10)
+        if (ListOfAllTargets.ShipList.Count == 0 && stasionInfo.gas < 20)
         {
             TestClearStuff();
             SceneManager.LoadScene(3);
