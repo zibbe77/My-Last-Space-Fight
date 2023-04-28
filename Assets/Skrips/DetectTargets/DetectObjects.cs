@@ -82,7 +82,6 @@ public class DetectObjects : MonoBehaviour
             shipInfo.timeSet = shipInfo.timeBase;
             shipInfo.LaserTimeSet = shipInfo.LaserTimeBase;
 
-            print("ship");
         }
         if (shipInfo.LaserTimeSet < 0)
         {
@@ -119,7 +118,6 @@ public class DetectObjects : MonoBehaviour
             enemyinfo.timeSet = enemyinfo.timeBase;
             enemyinfo.LaserTimeSet = enemyinfo.LaserTimeBase;
 
-            print("enemy");
         }
         if (enemyinfo.LaserTimeSet < 0)
         {
