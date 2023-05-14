@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 83dba9c1379c8cc4c921c2a0a8dbd83c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e9c37c65425493d47bdd3af1c7d8984c, type: 2}
 --- !u!1 &5093399
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   uppgradesUiObj: {fileID: 0}
   uppValue: 0
   shipValue: 0
+  activeIntOverriteCeack: 0
 --- !u!1 &16915353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1086,7 @@ MonoBehaviour:
   uppgradesUiObj: {fileID: 243727381}
   uppValue: 450
   shipValue: 2
+  activeIntOverriteCeack: 2
 --- !u!1 &180866201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,37 +1197,6 @@ RectTransform:
   m_AnchoredPosition: {x: -120, y: 116}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &216090663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 216090664}
-  m_Layer: 0
-  m_Name: LaserBeamLineRender
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &216090664
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216090663}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.402324, y: -20.098827, z: 37.410656}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &226066824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1618,7 @@ MonoBehaviour:
   uppgradesUiObj: {fileID: 243727381}
   uppValue: 275
   shipValue: 1
+  activeIntOverriteCeack: 1
 --- !u!1 &263775238
 GameObject:
   m_ObjectHideFlags: 0
@@ -5212,6 +5184,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Space Station
       objectReference: {fileID: 0}
+    - target: {fileID: 3543014999286372142, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543014999286372142, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906053190381828136, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906053190381828136, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de393cea76f3d0f4b958a9e5cf765b5a, type: 3}
 --- !u!1 &871437285
@@ -5556,6 +5544,7 @@ GameObject:
   - component: {fileID: 963194234}
   - component: {fileID: 963194235}
   - component: {fileID: 963194236}
+  - component: {fileID: 963194237}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -5787,6 +5776,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16119f836d806b64dbb2da829fb4daf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &963194237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217b7dd4cf4262d46ab105d7a5e6f764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 45
 --- !u!1 &971913146
 GameObject:
   m_ObjectHideFlags: 0
@@ -12512,3 +12514,4 @@ MonoBehaviour:
   uppgradesUiObj: {fileID: 243727381}
   uppValue: 104
   shipValue: 0
+  activeIntOverriteCeack: 0

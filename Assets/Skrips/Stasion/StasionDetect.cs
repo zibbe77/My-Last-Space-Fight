@@ -7,6 +7,7 @@ public class StasionDetect : MonoBehaviour
 {
     List<GameObject> shipListClose = new List<GameObject>();
     StasionInfo stasionInfo;
+    public GameObject repairEfect;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class StasionDetect : MonoBehaviour
             stasionInfo.minerals += shipInfo.minerals;
             shipInfo.minerals = 0;
         }
+
     }
 
     public void DoOnRepairClick()
@@ -44,6 +46,8 @@ public class StasionDetect : MonoBehaviour
                 shipInfo.Hp = shipInfo.MaxHp;
                 shipInfo.Shield = shipInfo.Maxshields;
             }
+            GameObject g = Instantiate(repairEfect) as GameObject;
+            g.transform.position = this.gameObject.transform.position;
         }
     }
 

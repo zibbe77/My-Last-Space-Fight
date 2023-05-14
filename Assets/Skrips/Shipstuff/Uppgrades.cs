@@ -25,6 +25,12 @@ public class Uppgrades : MonoBehaviour
     static private int internalShipValue;
     static private int uppgradeSlot;
 
+    //
+    static private int activeIntOverrite;
+    public int activeIntOverriteCeack;
+
+    static private int activeIntOverrite2;
+
     public void OnFirstUppgrade()
     {
         RectTransform rectTransform = uppgradesUiObj.GetComponent<RectTransform>();
@@ -47,6 +53,19 @@ public class Uppgrades : MonoBehaviour
 
         active = uppgradesUiObj.active;
         active = !active;
+
+        if (activeIntOverrite != activeIntOverriteCeack)
+        {
+            active = true;
+        }
+        if (activeIntOverrite2 != 0)
+        {
+            active = true;
+        }
+
+        activeIntOverrite2 = 0;
+        activeIntOverrite = activeIntOverriteCeack;
+
         uppgradesUiObj.SetActive(active);
     }
 
@@ -70,6 +89,19 @@ public class Uppgrades : MonoBehaviour
 
         //set active
         active = !active;
+
+        if (activeIntOverrite != activeIntOverriteCeack)
+        {
+            active = true;
+        }
+        if (activeIntOverrite2 != 1)
+        {
+            active = true;
+        }
+
+        activeIntOverrite2 = 1;
+        activeIntOverrite = activeIntOverriteCeack;
+
         uppgradesUiObj.SetActive(active);
     }
 
@@ -93,6 +125,19 @@ public class Uppgrades : MonoBehaviour
 
         //set active
         active = !active;
+
+        if (activeIntOverrite != activeIntOverriteCeack)
+        {
+            active = true;
+        }
+        if (activeIntOverrite2 != 2)
+        {
+            active = true;
+        }
+
+        activeIntOverrite2 = 2;
+        activeIntOverrite = activeIntOverriteCeack;
+
         uppgradesUiObj.SetActive(active);
     }
 

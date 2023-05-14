@@ -87,4 +87,7 @@ public class ShipInfo : MonoBehaviour
         Shield = 50;
         Maxshields = 50;
     }
+
+    //Distesnce symbel
+    public GameObject distenstSymbel;
 }
