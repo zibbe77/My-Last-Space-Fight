@@ -235,7 +235,8 @@ public class NewCamraControler : MonoBehaviour
     #region Rotate
     private void RotateCamera(InputAction.CallbackContext inputvalue)
     {
-        if (!Mouse.current.rightButton.isPressed) { rotateDelayIn = rotateDelay; return; }
+        if (!Keyboard.current.rKey.isPressed) { rotateDelayIn = rotateDelay; return; }
+        //Mouse.current.rightButton.isPressed
         rotateDelayIn -= Time.deltaTime;
 
         if (rotateDelayIn < 0)
